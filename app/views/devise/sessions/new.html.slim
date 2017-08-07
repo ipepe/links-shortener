@@ -1,0 +1,33 @@
+.row
+  .col-md-6.col-md-offset-3
+    h3 = I18n.t('application.navigation.new_session_path')
+    - if devise_mapping.omniauthable? && resource_class.omniauth_providers.present?
+      p Connect with a social network
+      == render "devise/sessions/omniauth_links"
+      hr
+
+    p Log in with your email address
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label :email, class: 'control-label'
+        = f.email_field :email, autofocus: true, class: 'form-control'
+      .form-group
+        = f.label :password, class: 'control-label'
+        = f.password_field :password, autocomplete: "off", class: 'form-control'
+      -if devise_mapping.rememberable?
+        .form-group
+          => f.check_box :remember_me
+          = f.label :remember_me, class: 'control-label'
+      .actions
+        = f.submit I18n.t('application.navigation.new_session_path'), class: ['btn', 'btn-primary']
+        .pull-right
+          == render 'devise/shared/links'
+
+
+    /.col-md-6
+    /  p
+    /    | Rejestrując konto w naszym serwisie, lub korzystając z logowania poprzez zewnętrzne platformy, oświadczasz że zapoznałeś się z naszym
+    /    | #{" "}
+    /    a href="/information/regulation" regulaminem
+    /    | #{" "}oraz#{" "}
+    /    a href="/information/privacy_policy" polityką prywatności

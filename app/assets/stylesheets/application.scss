@@ -1,9 +1,14 @@
 //= require_tree .
 //= require_self
-@import "bootswatch-sass/paper/bootstrap.scss";
+$fa-font-path: "/assets/font-awesome/fonts";
+@import 'font-awesome/font-awesome.scss';
+@import "bootswatch-sass/darkly/bootstrap.scss";
+@import "bootstrap-social.css";
+
 
 .navbar{
   border-radius: 0px;
+  //margin-bottom: 0px;
 }
 
 .glyphicon{
@@ -15,3 +20,13 @@ body, .container, .container-fluid{
   word-wrap: break-word;
 }
 
+#app-container{
+  padding-bottom: 30px;
+}
+
+.padding-bottom-10{
+  padding-bottom: 10px;
+}
+.padding-top-20{
+  padding-top: 20px;
+}

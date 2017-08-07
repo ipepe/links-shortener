@@ -20,5 +20,7 @@ module RailsAppStartingTemplate
     config.generators.template_engine :slim
 
 
+
+
   end
 end

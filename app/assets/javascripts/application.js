@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require bootstrap-sass-official
 //= require_tree .
 
-jQuery(function($) {
-    $("tr[data-href]").click(function() {
-        window.location = $(this).data('href');
-    });
-});
+// jQuery(function($) {
+//     $("tr[data-href]").click(function() {
+//         window.location = $(this).data('href');
+//     });
+// });

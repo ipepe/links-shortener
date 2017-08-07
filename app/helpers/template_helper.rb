@@ -60,7 +60,9 @@ end
 
 ActionView::Helpers::FormBuilder.module_eval do
   def base_errors
-    @template.content_tag(:span, @object.errors[:base].join(",") , class: 'has-error')
+    if @object.errors[:base].present?
+      @template.content_tag(:span, @object.errors[:base].join(",") , class: 'has-error')
+    end
   end
 
   def form_field_for(attribute, *options)

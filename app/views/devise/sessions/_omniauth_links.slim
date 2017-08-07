@@ -1,0 +1,8 @@
+- if devise_mapping.omniauthable?
+  .row
+    - resource_class.omniauth_providers.each do |provider|
+      .col-md-6
+        = link_to omniauth_authorize_path(resource_name, provider),
+                class: "btn btn-block btn-social btn-#{omniauth_name(provider)}"
+          span.fa class="fa-#{omniauth_name(provider)}"
+          | Sign in with #{omniauth_name(provider).capitalize}

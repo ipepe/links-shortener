@@ -17,9 +17,11 @@ html lang=I18n.locale
   body
     == include_gon
     == render 'layouts/navigation'
-    == flash_messages
-    - if @without_container
-      == yield
-    - else
-      .container
+    #app-container
+      - if @without_container
+        == flash_messages
         == yield
+      - else
+        .container
+          == flash_messages
+          == yield

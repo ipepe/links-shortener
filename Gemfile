@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
+  gem 'pry'
 end
 
 group :development do
@@ -55,6 +57,7 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootswatch-sass'
+  gem 'rails-assets-font-awesome'
 end
 
 gem 'dotenv-rails'
@@ -62,5 +65,7 @@ gem 'slim-rails'
 gem 'gon'
 gem 'non-stupid-digest-assets'
 
-
-
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'

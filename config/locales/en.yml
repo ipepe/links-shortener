@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  application:
+    name: AppName
+    title: AppTitle
+    navigation:
+      new_session_path: Log in
+      root_path: Home
