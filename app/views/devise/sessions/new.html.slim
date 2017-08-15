@@ -10,10 +10,10 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-group
         = f.label :email, class: 'control-label'
-        = f.email_field :email, autofocus: true, class: 'form-control'
+        = f.email_field :email, autofocus: true, class: 'form-control', required: true, placeholder: 'email@example.com'
       .form-group
         = f.label :password, class: 'control-label'
-        = f.password_field :password, autocomplete: "off", class: 'form-control'
+        = f.password_field :password, autocomplete: "off", class: 'form-control', required: true, placeholder: '*******'
       -if devise_mapping.rememberable?
         .form-group
           => f.check_box :remember_me
@@ -23,11 +23,10 @@
         .pull-right
           == render 'devise/shared/links'
 
-
-    /.col-md-6
-    /  p
-    /    | Rejestrując konto w naszym serwisie, lub korzystając z logowania poprzez zewnętrzne platformy, oświadczasz że zapoznałeś się z naszym
-    /    | #{" "}
-    /    a href="/information/regulation" regulaminem
-    /    | #{" "}oraz#{" "}
-    /    a href="/information/privacy_policy" polityką prywatności
+  .col-md-6.col-md-offset-3
+    hr
+    p
+      | By creating account in our website or logging in by external login providers, You agree to our
+      a<> href="/information/terms-of-service" terms of service
+      | and
+      a<> href="/information/privacy-policy" privacy policy.
