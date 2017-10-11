@@ -77,3 +77,5 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+
+gem 'acts_as_paranoid', '~> 0.5.0'

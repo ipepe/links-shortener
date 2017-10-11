@@ -25,4 +25,8 @@ en:
     title: AppTitle
     navigation:
       new_session_path: Log in
+      unlock_path: Resend unlock instructions
+      registration_path: Sign up
+      confirmation_path: Resend confirmation instructions
+      password_path: Send me reset password instructions
       root_path: Home
