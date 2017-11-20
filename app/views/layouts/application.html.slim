@@ -10,6 +10,9 @@ html lang=I18n.locale
     meta name="mobile-web-app-capable" content="yes"
     meta name="apple-mobile-web-app-capable" content="yes"
     meta charset="utf-8"
+    /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv.min.js", "respond.min.js"
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags

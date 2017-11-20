@@ -70,6 +70,7 @@ gem 'dotenv-rails'
 gem 'slim-rails'
 gem 'gon'
 gem 'non-stupid-digest-assets'
+gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 
 
 

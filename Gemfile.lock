@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: c3b255d1bd4128f6338020234f5a5c48d017827b
+  specs:
+    bootstrap-generators (3.3.4)
+      railties (>= 3.1.0)
+
+GIT
   remote: https://github.com/ipepe/rubocop.git
   revision: 284c03e00f743d619b20de1b3fb10d216851e1c2
   specs:
@@ -227,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-generators!
   byebug
   capistrano
   capistrano-bundler
