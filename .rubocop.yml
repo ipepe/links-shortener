@@ -7,10 +7,11 @@ AllCops:
   Exclude:
   - vendor/**/*
   - db/**/*
+  - config/deploy.rb
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   Severity: fatal
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.3
 Rails:
   Enabled: true
   Severity: fatal
@@ -774,7 +775,7 @@ Style/DefWithParentheses:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#method-parens
   Enabled: true
   Severity: fatal
-Style/DeprecatedHashMethods:
+Style/PreferredHashMethods:
   Description: Checks for use of deprecated Hash methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#hash-key
   Enabled: false
