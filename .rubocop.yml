@@ -162,15 +162,8 @@ Layout/EmptyLinesAroundModuleBody:
   - empty_lines
   - no_empty_lines
 Style/Encoding:
-  Severity: fatal
-  Description: Use UTF-8 as the source file encoding.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#utf-8
   Enabled: false
-  EnforcedStyle: always
-  SupportedStyles:
-  - when_needed
-  - always
-Style/FileName:
+Naming/FileName:
   Severity: fatal
   Description: Use snake_case for source file names.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-files
@@ -227,11 +220,7 @@ Style/HashSyntax:
   - ruby19
   - hash_rockets
 Style/IfUnlessModifier:
-  Severity: fatal
-  Description: Favor modifier if/unless usage when you have a single-line body.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#if-as-a-modifier
   Enabled: false
-  MaxLineLength: 120
 Layout/IndentationWidth:
   Severity: fatal
   Description: Use 2 spaces for indentation.
@@ -263,6 +252,9 @@ Style/NonNilCheck:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-non-nil-checks
   Enabled: true
   IncludeSemanticChanges: false
+Style/MixinUsage:
+  Exclude:
+  - bin/*
 Style/MethodDefParentheses:
   Severity: fatal
   Description: Checks if the method definitions have or don't have parentheses.
@@ -272,7 +264,7 @@ Style/MethodDefParentheses:
   SupportedStyles:
   - require_parentheses
   - require_no_parentheses
-Style/MethodName:
+Naming/MethodName:
   Severity: fatal
   Description: Use the configured style when naming methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-symbols-methods-vars
@@ -327,7 +319,7 @@ Style/PercentQLiterals:
   - lower_case_q
   - upper_case_q
   Severity: fatal
-Style/PredicateName:
+Naming/PredicateName:
   Description: Check the names of predicate methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark
   Enabled: true
@@ -450,7 +442,13 @@ Layout/TrailingBlankLines:
   Enabled: true
   EnforcedStyle: final_newline
   Severity: fatal
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInHashLiteral:
+  Description: Checks for trailing comma in parameter lists and literals.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas
+  Enabled: true
+  EnforcedStyleForMultiline: no_comma
+  Severity: fatal
+Style/TrailingCommaInArrayLiteral:
   Description: Checks for trailing comma in parameter lists and literals.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas
   Enabled: true
@@ -488,7 +486,7 @@ Style/TrivialAccessors:
   - to_s
   - to_sym
   Severity: fatal
-Style/VariableName:
+Naming/VariableName:
   Description: Use the configured style when naming variables.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-symbols-methods-vars
   Enabled: true
@@ -498,11 +496,7 @@ Style/VariableName:
   - camelCase
   Severity: fatal
 Style/WhileUntilModifier:
-  Description: Favor modifier while/until usage when you have a single-line body.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#while-as-a-modifier
   Enabled: false
-  MaxLineLength: 100
-  Severity: fatal
 Style/WordArray:
   Description: Use %w or %W for arrays of words.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-w
@@ -572,12 +566,12 @@ Lint/AssignmentInCondition:
   Enabled: false
   AllowSafeAssignment: true
   Severity: fatal
-Lint/EndAlignment:
+Layout/EndAlignment:
   Description: Align ends correctly.
   Enabled: true
   EnforcedStyleAlignWith: keyword
   Severity: fatal
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   Description: Align ends corresponding to defs correctly.
   Enabled: true
   EnforcedStyleAlignWith: start_of_line
@@ -646,7 +640,7 @@ Layout/ExtraSpacing:
   Description: Do not use unnecessary spacing.
   Enabled: true
   Severity: fatal
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: false
   Severity: fatal
@@ -670,7 +664,7 @@ Style/AsciiComments:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#english-comments
   Enabled: false
   Severity: fatal
-Style/AsciiIdentifiers:
+Naming/AsciiIdentifiers:
   Description: Use only ascii symbols in identifiers.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#english-identifiers
   Enabled: false
@@ -710,7 +704,7 @@ Style/CharacterLiteral:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-character-literals
   Enabled: false
   Severity: fatal
-Style/ClassAndModuleCamelCase:
+Naming/ClassAndModuleCamelCase:
   Description: Use CamelCase for classes and modules.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#camelcase-classes
   Enabled: true
@@ -734,7 +728,7 @@ Layout/CommentIndentation:
   Description: Indentation of comments.
   Enabled: true
   Severity: fatal
-Style/ConstantName:
+Naming/ConstantName:
   Description: Constants should use SCREAMING_SNAKE_CASE.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#screaming-snake-case
   Enabled: true
@@ -888,7 +882,7 @@ Style/OneLineConditional:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#ternary-operator
   Enabled: false
   Severity: fatal
-Style/OpMethod:
+Naming/BinaryOperatorParameterName:
   Description: When defining binary operators, name the argument other.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#other-arg
   Enabled: false
@@ -970,11 +964,6 @@ Layout/SpaceBeforeSemicolon:
   Description: No spaces before semicolons.
   Enabled: true
   Severity: fatal
-Layout/SpaceInsideBrackets:
-  Description: No spaces after [ or before ].
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-spaces-braces
-  Enabled: true
-  Severity: fatal
 Layout/SpaceInsideParens:
   Description: No spaces after ( or before ).
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-spaces-braces
@@ -1051,11 +1040,11 @@ Lint/AmbiguousRegexpLiteral:
     invocation without parenthesis.
   Enabled: false
   Severity: fatal
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Description: Align block ends correctly.
   Enabled: true
   Severity: fatal
-Lint/ConditionPosition:
+Layout/ConditionPosition:
   Description: Checks for condition placed in a confusing position relative to the
     keyword.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#same-line-condition
@@ -1101,15 +1090,6 @@ Security/Eval:
 Lint/HandleExceptions:
   Description: Don't suppress exception.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions
-  Enabled: false
-  Severity: fatal
-Lint/InvalidCharacterLiteral:
-  Description: Checks for invalid character literals with a non-escaped whitespace
-    character.
-  Enabled: false
-  Severity: fatal
-Lint/LiteralInCondition:
-  Description: Checks of literals used in conditions.
   Enabled: false
   Severity: fatal
 Lint/LiteralInInterpolation:

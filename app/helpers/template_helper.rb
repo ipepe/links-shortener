@@ -7,7 +7,7 @@ module TemplateHelper
           type: 'text',
           value: resource.read_attribute(attribute)
         }.merge(special_attributes_for(resource, attribute)))
-    ), class: 'form-group')
+  ), class: 'form-group')
   end
 
   def special_attributes_for(resource, attribute)
