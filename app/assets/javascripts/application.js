@@ -13,10 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sass-official
+//= require_self
 //= require_tree .
 
-jQuery(function($) {
-    $("tr[data-href]").click(function() {
-        window.location = $(this).data('href');
-    });
+window.App = {};
+window.App.Controllers = {
+    _instances: []
+};
+window.App.ControllerInstances = [];
+$(document).ready(function(){
+    if (document.body.dataset.controllerName && window.App.Controllers[document.body.dataset.controllerName]){
+        window.App.Controllers._instances.push(new window.App.Controllers[document.body.dataset.controllerName]());
+    }
 });

@@ -14,7 +14,7 @@ html lang=I18n.locale
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
 
-  body
+  body data={controller_name: javascript_controller_name}
     == include_gon
     == render 'layouts/navigation'
     == flash_messages
