@@ -3,8 +3,7 @@ set :repo_url,        'change_me_url_here'
 set :user,            'webapp'
 
 # Don't change these unless you know what you're doing
-set :rbenv_ruby,      '2.3.3'
-set :passenger_restart_with_touch, true
+set :rbenv_ruby,      '2.4.3'
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
